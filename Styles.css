@@ -1,0 +1,16 @@
+body {font-family: Arial;
+     display: flex;
+     flex-direction: column;}
+
+header {background-color: #002171;
+        color: #FFFFFF;
+        text-align: center;
+        padding: .5em;}
+
+nav {background-color: #FF0000;
+     color: white;
+     text-align: center;
+     padding: 1em;}
+
+#search {margin-bottom: 10px;}
+        
