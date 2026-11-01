@@ -12,7 +12,7 @@ function processShows(result) {
     name: item.show.name,
     rating: item.show.rating.average,
     genres: item.show.genres
-  });
+  }));
 }
 
 function logShows(query) {
