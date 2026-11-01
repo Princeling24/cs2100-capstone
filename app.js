@@ -11,3 +11,12 @@ async function fetchShows(query) {
 function logShows(query) {
   console.log(shows);
 }
+
+async function searchShows(query) {
+  try {
+    const shows = await fetchShows(query);
+  }
+  catch (error) {
+    console.error("error fetching data:", error);
+  }
+}
