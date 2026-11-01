@@ -7,10 +7,12 @@ header {background-color: #002171;
         text-align: center;
         padding: .5em;}
 
-nav {background-color: #FF0000;
+nav {background-color: #B22222;
      color: white;
      text-align: center;
-     padding: 1em;}
+     padding: .5em;
+    font-size: 1.2em;
+    font-weight: bold;}
 
 #search {margin-bottom: 10px;}
         
