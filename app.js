@@ -19,3 +19,12 @@ async function searchShows(query) {
     console.error("error fetching shows:", error);
   }
 }
+
+documemnt
+.getElementById("searchForm")
+
+.addEventListener("submit", async function(event) {
+  event.preventDefault();
+  const query = document.getElementById("search").value;
+  await searchShows(query);
+});
