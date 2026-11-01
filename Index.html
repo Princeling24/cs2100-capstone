@@ -3,6 +3,7 @@
 <head>
     <title> Superhero Maze </title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <main>
         <h3> Search for a Series </h3>
         <form id="searchForm">
-            <label for="search"> Search </label>
+            <label for="search"> </label>
                 <input type ="text" id="search" name="search" placeholder="Enter show name"> <br>
             <button type="submit"> Search </button>
         </form>
@@ -27,10 +28,11 @@
             <article class="show-poster">
                 <img src="placeholder.jpg" alt="show poster">
             <p> Name </p>
-            <p> Rating: 5.0 </p>
+            <p> Rating </p>
             <p> Favorite Status </p>
             </article>
         </section>
+        <br><br>
 
         <section><h3> Filter Options </h3>
             <label for="status"> Status </label>
@@ -38,13 +40,15 @@
                 <option> On-going </option>
                 <option> Completed</option>
                 <option> Coming Soon </option>
-            </select><br><br>
+            </select>
+            <br><br>
             
             <label for="type"> Show type </label>
             <select id="type">
                 <option> Animated </option>
                 <option> Live Action </option>
-            </select><br><br>
+            </select>
+            <br><br>
             
             <label for="genre"> Genre </label>
             <select id="genre">
@@ -52,9 +56,10 @@
                 <option> Adventure </option>
                 <option> Comedy </option>
                 <option> Drama </option>
-            </select><br><br>
+            </select>
+            <br><br>
             
-            <label for="rating"> Rating (1-10): </label>
+            <label for="rating"> Rating: </label>
             <input type="number" name="rating" id="rating" min="1" max="10">
             <br><br>
             
@@ -64,7 +69,8 @@
                 <option> DC </option>
                 <option> Netflix </option>
                 <option> Amazon </option>
-            </select><br><br>
+            </select>
+            <br><br>
         </section>
 
     </main>
