@@ -7,6 +7,14 @@ async function fetchShows(query) {
   return await response.json();
 }
 
+function processShows(result) {
+  return result.map(item => ({
+    name: item.show.name,
+    rating: item.show.rating.average,
+    genres: item.show.genres
+  });
+}
+
 function logShows(query) {
   console.log(shows);
 }
