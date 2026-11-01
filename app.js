@@ -7,3 +7,7 @@ async function fetchShows(query) {
   const data = await response.json();
   return data;
 }
+
+function logShows(query) {
+  console.log(shows);
+}
