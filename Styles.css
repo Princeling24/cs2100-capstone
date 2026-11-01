@@ -20,6 +20,8 @@ nav a {color: white;
 
 nav a:hover {color: #FFD700;}
 
+main {padding: 20px;}
+
 #search {margin-bottom: 10px;}
         
 section {margin-top: 40px;}
