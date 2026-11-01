@@ -4,8 +4,7 @@ function buildSearchURL(query) {
 
 async function fetchShows(query) {
   const response = await fetch(buildSearchURL(query));
-  const data = await response.json();
-  return data;
+  return await response.json();
 }
 
 function logShows(query) {
