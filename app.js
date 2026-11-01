@@ -30,7 +30,7 @@ async function searchShows(query) {
   }
 }
 
-documemnt
+document
 .getElementById("searchForm")
 
 .addEventListener("submit", async function(event) {
