@@ -8,7 +8,9 @@ async function fetchShows(query) {
 }
 
 function processShows(result) {
-  return result.map(item => ({
+  return result.filter(item =>
+    item.show.genres.includes("Action) || item.show.genres.includes("Science-Fiction") || item.show.genres.includes("Fantasy"))
+    .map(item => ({
     name: item.show.name,
     rating: item.show.rating.average,
     genres: item.show.genres
