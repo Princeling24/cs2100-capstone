@@ -21,7 +21,9 @@ function logShows(query) {
 
 async function searchShows(query) {
   try {
-    const shows = await fetchShows(query);
+    const results = await fetchShows(query);
+    const shows = processShows(results);
+    logShows(shows);
   }
   catch (error) {
     console.error("error fetching shows:", error);
