@@ -16,6 +16,6 @@ async function searchShows(query) {
     const shows = await fetchShows(query);
   }
   catch (error) {
-    console.error("error fetching data:", error);
+    console.error("error fetching shows:", error);
   }
 }
