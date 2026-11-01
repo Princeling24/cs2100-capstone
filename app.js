@@ -15,7 +15,7 @@ function processShows(result) {
   }));
 }
 
-function logShows(query) {
+function logShows(shows) {
   console.log(shows);
 }
 
