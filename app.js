@@ -17,8 +17,36 @@ function processShows(result) {
   }));
 }
 
-function logShows(shows) {
-  console.log(shows);
+let allShows = [];
+
+function renderShows(shows) {
+  const container = document.getElementById("resultsContainer");
+  container.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+  shows.forEach(show => {
+    const card = document.createElement("article");
+    card.classList.add("show-card");
+
+    card.dataset.rating = show.rating || 0;
+    card.dataset.genre = show.genres.join(",");
+
+    const title = document.createElement("h4");
+      title.textContent = show.name;
+
+    const rating = document.createElement("p");
+    rating.textContent = `Rating: ${show.rating ?? "N/A"}`;
+
+    const genres = document.createElement("p");
+    genres.textContent = `Genres: ${show.genres.join(", ")}`;
+
+    card.appendChild(title);
+    card.appendChild(rating);
+    card.appendChild(genres);
+
+    fragment.appendChild(card);
+  });
+
+  container.appendChild(fragment);
 }
 
 async function searchShows(query) {
