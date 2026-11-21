@@ -60,6 +60,22 @@ async function searchShows(query) {
   }
 }
 
+function applyFilters() {
+  const selectGenre = document.getElementById("genre").value;
+
+  const minRating = Number(document.getElementById("rating").value || 0;
+
+  const filteredShows = allShows.filter(show => {
+    const genreMatch = selectedGenre === "All" || show.genres.includes(selectedGenre);
+
+    const ratingMatch = (show.rating || 0) >= minRating;
+
+    return genreMatch && ratingMatch;
+  });
+
+  renderShows(filteredShows);
+}
+
 document
 .getElementById("searchForm")
 
