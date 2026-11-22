@@ -66,7 +66,7 @@ function applyFilters() {
   const minRating = Number(document.getElementById("rating").value || 0;
 
   const filteredShows = allShows.filter(show => {
-    const genreMatch = selectedGenre === "All" || show.genres.includes(selectedGenre);
+    const genreMatch = show.genres.includes(selectedGenre);
 
     const ratingMatch = (show.rating || 0) >= minRating;
 
