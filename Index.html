@@ -19,22 +19,33 @@
         <h3> Search for a Series </h3>
         <form id="searchForm">
             <label for="search"> Search </label>
-                <input type ="text" id="search" name="search" placeholder="Enter show name"> <br>
+                <input type="text" id="search">
+            <span class="error" id="searchError"> </span>
+
+            <label for="rating"> Rating (1-10): </label>
+            <input type="number" id="rating" min="1" max="10">
+            <span class="error" id="ratingError"> </span>
+
+            <label for="email"> Email Address </label>
+            <input type="email" id="email">
+            <span class="error" id="emailError"> </span>
+            <br>
+            
             <button type="submit"> Search </button>
         </form>
 
         <section>
         <h3> Results </h3>
             <div id="resultsContainer">
-                <p id="placeholderText"> Search for a show to view results.
+                <p id="placeholderText"> Search for a show to view results. </p>
             </div>
+        </section>
             <article class="show-poster">
                 <img src="placeholder.jpg" alt="show poster">
             <p> Name </p>
             <p> Rating </p>
             <p> Favorite Status </p>
             </article>
-        </section>
         <br><br>
 
         <section><h3> Filter Options </h3>
@@ -60,10 +71,6 @@
                 <option> Comedy </option>
                 <option> Drama </option>
             </select>
-            <br><br>
-            
-            <label for="rating"> Rating (1-10): </label>
-            <input type="number" name="rating" id="rating" min="1" max="10">
             <br><br>
             
             <label for="studio"> Studio </label>
