@@ -64,7 +64,7 @@ async function searchShows(query) {
 function applyFilters() {
   const selectGenre = document.getElementById("genre").value;
 
-  const minRating = Number(document.getElementById("rating").value || 0;
+  const minRating = Number(document.getElementById("rating").value || 0);
 
   const filteredShows = allShows.filter(show => {
     const genreMatch = show.genres.includes(selectGenre);
