@@ -100,7 +100,7 @@ function validateForm() {
     return valid;
   }
 
-  if (rating === "") {
+  if (rating === "" || rating < 1 || rating > 10) {
     valid = false; 
     document.getElementById("ratingError").textContent = "Rating must be between 1 and 10";
     return valid;
