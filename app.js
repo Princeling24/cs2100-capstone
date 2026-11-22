@@ -84,3 +84,11 @@ document
   const query = document.getElementById("search").value;
   await searchShows(query);
 });
+
+document
+.getElementById("search")
+.addEventListener("input"), function() {
+  const searchText = this.value.toLowerCase();
+  const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
+  renderShows(filtered);
+});
