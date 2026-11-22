@@ -25,3 +25,13 @@ main {padding: 20px;}
 #search {margin-bottom: 10px;}
         
 section {margin-top: 40px;}
+
+input:focus,
+select:focus,
+button:focus,
+a:focus {outline: 3px solid #FFD700;
+         outline-offset: 2px;}
+
+.error {display: block;
+        color: #B00020;
+        font-size: .9rem;}
