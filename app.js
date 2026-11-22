@@ -94,17 +94,19 @@ function validateForm() {
   const search = document.getElementById("search").value.trim();
   const rating = document.getElementById("rating").value;
 
-  if (document.getElementById("searchError").textContent = "") { 
+  if (search === "") { 
     valid = false; 
     document.getElementById("searchError").textContent = "Search must be valid";
     return valid;
   }
 
-  if (document.getElementById("ratingError").textContent = "") {
+  if (rating === "") {
     valid = false; 
-    document.getElementById("searchError").textContent = "Rating must be between 1 and 10";
+    document.getElementById("ratingError").textContent = "Rating must be between 1 and 10";
     return valid;
   }
+
+  return valid;
 }
 
 document.getElementById("searchForm").addEventListener("submit", async function(event) {
