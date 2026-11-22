@@ -92,3 +92,21 @@ document
   const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
   renderShows(filtered);
 });
+
+function validateForm() {
+  let valid = true;
+  const search = document.getElementById("search").value.trim();
+  const rating = document.getElementById("rating").value;
+
+  if (document.getElementById("searchError").textContent = "") { 
+    valid = false; 
+    document.getElementById("searchError").textContent = "Search must be valid";
+    return valid;
+  }
+
+  if (document.getElementById("ratingError").textContent = "") {
+    valid = false; 
+    document.getElementById("searchError").textContent = "Rating must be between 1 and 10";
+    return valid;
+  }
+}
