@@ -53,7 +53,8 @@ async function searchShows(query) {
   try {
     const results = await fetchShows(query);
     const shows = processShows(results);
-    logShows(shows);
+    allShows = shows;
+    renderShows(shows);
   }
   catch (error) {
     console.error("error fetching shows:", error);
