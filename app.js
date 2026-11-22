@@ -76,18 +76,13 @@ function applyFilters() {
   renderShows(filteredShows);
 }
 
-document
-.getElementById("searchForm")
-
-.addEventListener("submit", async function(event) {
+document.getElementById("searchForm").addEventListener("submit", async function(event) {
   event.preventDefault();
   const query = document.getElementById("search").value;
   await searchShows(query);
 });
 
-document
-.getElementById("search")
-.addEventListener("input"), function() {
+document.getElementById("search").addEventListener("input"), function() {
   const searchText = this.value.toLowerCase();
   const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
   renderShows(filtered);
@@ -110,3 +105,13 @@ function validateForm() {
     return valid;
   }
 }
+
+document.getElementById("searchForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  if (!validateForm()) {
+    return;
+  }
+
+  const query = document.getElementById("search").value;
+  await searchShows(query);
+});
