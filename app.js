@@ -116,3 +116,7 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   const query = document.getElementById("search").value;
   await searchShows(query);
 });
+
+document.getElementById("genre").addEventListener("change", applyFilters);
+
+document.getElementById("rating").addEventListener("input", applyFilters);
