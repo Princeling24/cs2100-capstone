@@ -67,7 +67,7 @@ function applyFilters() {
   const minRating = Number(document.getElementById("rating").value || 0;
 
   const filteredShows = allShows.filter(show => {
-    const genreMatch = show.genres.includes(selectedGenre);
+    const genreMatch = show.genres.includes(selectGenre);
 
     const ratingMatch = (show.rating || 0) >= minRating;
 
@@ -83,7 +83,7 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   await searchShows(query);
 });
 
-document.getElementById("search").addEventListener("input"), function() {
+document.getElementById("search").addEventListener("input", function() {
   const searchText = this.value.toLowerCase();
   const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
   renderShows(filtered);
