@@ -77,12 +77,6 @@ function applyFilters() {
   renderShows(filteredShows);
 }
 
-document.getElementById("searchForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const query = document.getElementById("search").value;
-  await searchShows(query);
-});
-
 document.getElementById("search").addEventListener("input", function() {
   const searchText = this.value.toLowerCase();
   const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
