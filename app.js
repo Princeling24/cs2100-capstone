@@ -13,11 +13,13 @@ async function fetchShows(query) {
 }
 
 function processShows(result) {
-    return result.map(item => ({
-        name: item.show.name,
-        rating: item.show.rating.average,
-        genres: item.show.genres
-    }));
+  return result.filter(item =>
+    item.show.genres.includes("Action") || item.show.genres.includes("Science-Fiction") || item.show.genres.includes("Fantasy"))
+    .map(item => ({
+    name: item.show.name,
+    rating: item.show.rating.average,
+    genres: item.show.genres
+  }));
 }
 
 let allShows = [];
@@ -53,24 +55,15 @@ function renderShows(shows) {
 }
 
 async function searchShows(query) {
-    try {
-        console.log("Searching for:", query);
-
-        const results = await fetchShows(query);
-
-        console.log("API returned:", results);
-
-        const shows = processShows(results);
-
-        console.log("Processed shows:", shows);
-
-        allShows = shows;
-
-        renderShows(shows);
-    }
-    catch (error) {
-        console.error("error fetching shows:", error);
-    }
+  try {
+    const results = await fetchShows(query);
+    const shows = processShows(results);
+    allShows = shows;
+    renderShows(shows);
+  }
+  catch (error) {
+    console.error("error fetching shows:", error);
+  }
 }
 
 function applyFilters() {
