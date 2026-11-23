@@ -177,3 +177,9 @@ document.getElementById("searchForm").addEventListener("submit", async function(
 document.getElementById("genre").addEventListener("change", applyFilters);
 
 document.getElementById("rating").addEventListener("input", applyFilters);
+
+document.getElementById("status").addEventListener("change", applyFilters);
+
+document.getElementById("type").addEventListener("change", applyFilters);
+
+document.getElementById("studio").addEventListener("change", applyFilters);
