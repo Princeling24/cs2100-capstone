@@ -90,6 +90,9 @@ function applyFilters() {
   const selectStatus = document.getElementById("status").value;
   const selectType = document.getElementById("type").value;
 
+  const searchText = document.getElementById("search").value.toLowerCase();
+  const nameMatch = show.name.toLowerCase().includes(searchText);
+
   const minRating = Number(document.getElementById("rating").value || 0);
 
   const filteredShows = allShows.filter(show => {
@@ -113,17 +116,13 @@ function applyFilters() {
         typeMatch = !show.genres.includes("Animation");
     }
 
-    return genreMatch && ratingMatch && statusMatch && typeMatch;
+    return nameMatch && genreMatch && ratingMatch && statusMatch && typeMatch;
   });
 
   renderShows(filteredShows);
 }
 
-document.getElementById("search").addEventListener("input", function() {
-  const searchText = this.value.toLowerCase();
-  const filtered = allShows.filter(show => show.name.toLowerCase().includes(searchText));
-  renderShows(filtered);
-});
+document.getElementById("search").addEventListener("input", applyFilters());
 
 function validateForm() {
   document.getElementById("searchError").textContent = "";
