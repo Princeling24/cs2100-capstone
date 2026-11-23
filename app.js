@@ -19,7 +19,10 @@ function processShows(result) {
         name: item.show.name,
         rating: item.show.rating.average || 0,
         genres: item.show.genres,
-        image: item.show.image ? item.show.image.medium : "placeholder.jpg"
+        image: item.show.image ? item.show.image.medium : "placeholder.jpg",
+        status: item.show.status,
+        type: item.show.type,
+        network: item.show.network ? item.show.network.name : ""
   }));
 }
 
