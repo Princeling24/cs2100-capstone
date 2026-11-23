@@ -90,12 +90,12 @@ function applyFilters() {
   const selectStatus = document.getElementById("status").value;
   const selectType = document.getElementById("type").value;
 
-  const searchText = document.getElementById("search").value.toLowerCase();
-  const nameMatch = show.name.toLowerCase().includes(searchText);
-
   const minRating = Number(document.getElementById("rating").value || 0);
 
   const filteredShows = allShows.filter(show => {
+    const searchText = document.getElementById("search").value.toLowerCase();
+    const nameMatch = show.name.toLowerCase().includes(searchText);
+      
     const genreMatch = selectGenre === "All" || show.genres.includes(selectGenre);
 
     const ratingMatch = (show.rating || 0) >= minRating;
@@ -122,7 +122,7 @@ function applyFilters() {
   renderShows(filteredShows);
 }
 
-document.getElementById("search").addEventListener("input", applyFilters());
+document.getElementById("search").addEventListener("input", applyFilters);
 
 function validateForm() {
   document.getElementById("searchError").textContent = "";
