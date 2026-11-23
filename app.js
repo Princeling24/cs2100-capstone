@@ -55,10 +55,14 @@ function renderShows(shows) {
       image.src = show.image;
       imagle.alt = `${show.name} poster`;
 
+    const favoriteButton = document.createElement("button");
+      favoriteButton.textContent = "Favorite";
+
     card.appendChild(title);
     card.appendChild(rating);
     card.appendChild(genres);
     card.appendChild(image);
+    card.appendChild(favoriteButton);
 
     fragment.appendChild(card);
   });
