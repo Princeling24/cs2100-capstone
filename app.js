@@ -122,12 +122,11 @@ function applyFilters() {
         studioMatch = show.name.toLowerCase().includes("dc");
     }
     else if (selectStudio === "Netflix") {
-        studioMatch = show.network && show.name.toLowerCase().includes("netflix");
+        studioMatch = show.network && show.network.toLowerCase().includes("netflix");
     }
     else if (selectStudio === "Amazon") {
-        studioMatch = show.network && show.name.toLowerCase().includes("amazon");
+        studioMatch = show.network && show.network.toLowerCase().includes("amazon");
     }
-}
 
     return genreMatch && ratingMatch && statusMatch && typeMatch && studioMatch;
   });
