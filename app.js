@@ -99,7 +99,7 @@ function applyFilters() {
     const ratingMatch = (show.rating || 0) >= minRating;
 
     let statusMatch = true;
-    if (seclectStatus === "On-Going") {
+    if (selectStatus === "On-going") {
         statusMatch = show.status === "Running"; 
     }
     else if (selectStatus === "Completed") {
