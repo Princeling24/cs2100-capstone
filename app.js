@@ -93,9 +93,11 @@ function applyFilters() {
   const minRating = Number(document.getElementById("rating").value || 0);
 
   const filteredShows = allShows.filter(show => {
-    const genreMatch = show.genres.includes(selectGenre);
+    const genreMatch = selectGenre === "all" || show.genres.includes(selectGenre);
 
     const ratingMatch = (show.rating || 0) >= minRating;
+
+    const statusMatch = selectStatus === "all" || show.status === selectStatus;
 
     let statusMatch = true;
     if (selectStatus === "On-going") {
@@ -107,7 +109,7 @@ function applyFilters() {
 
     let typeMatch = true;
     if (selectType === "Animated") {
-        typeMatch = show.genres.includes("Animation");
+        typeMatch = selectGenre === "all" || show.genres.includes("Animation");
     }
     else if (selectType === "Live Action") {
         typeMatch = !show.genres.includes("Animation");
