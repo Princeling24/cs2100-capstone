@@ -27,6 +27,12 @@ let allShows = [];
 function renderShows(shows) {
   const container = document.getElementById("resultsContainer");
   container.innerHTML = "";
+
+  if (shows.length === 0) {
+      container.textContent = "No shows found.";
+      return;
+  }
+    
   const fragment = document.createDocumentFragment();
   shows.forEach(show => {
     const card = document.createElement("article");
