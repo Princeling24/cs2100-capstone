@@ -3,7 +3,12 @@ function buildSearchURL(query) {
 }
 
 async function fetchShows(query) {
-  const response = await fetch(buildSearchURL(query));
+  const url = buildSearchURL(query);
+  console.log("Fetching: ", url);
+  
+  const response = await fetch(url);
+  console.log("Status: ", response.status);
+  
   return await response.json();
 }
 
