@@ -16,9 +16,10 @@ function processShows(result) {
   return result.filter(item =>
     item.show.genres.includes("Action") || item.show.genres.includes("Science-Fiction") || item.show.genres.includes("Fantasy"))
     .map(item => ({
-    name: item.show.name,
-    rating: item.show.rating.average,
-    genres: item.show.genres
+        name: item.show.name,
+        rating: item.show.rating.average,
+        genres: item.show.genres
+        image: item.show.image ? item.show.image.medium : "placeholder.jpb"
   }));
 }
 
@@ -50,9 +51,14 @@ function renderShows(shows) {
     const genres = document.createElement("p");
     genres.textContent = `Genres: ${show.genres.join(", ")}`;
 
+    const image = document.createElement("img");
+      image.src = show.image;
+      imagle.alt = `${show.name} poster`;
+
     card.appendChild(title);
     card.appendChild(rating);
     card.appendChild(genres);
+    card.appendChild(image);
 
     fragment.appendChild(card);
   });
