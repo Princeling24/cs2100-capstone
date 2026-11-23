@@ -17,9 +17,9 @@ function processShows(result) {
     item.show.genres.includes("Action") || item.show.genres.includes("Science-Fiction") || item.show.genres.includes("Fantasy"))
     .map(item => ({
         name: item.show.name,
-        rating: item.show.rating.average,
-        genres: item.show.genres
-        image: item.show.image ? item.show.image.medium : "placeholder.jpb"
+        rating: item.show.rating.average || 0,
+        genres: item.show.genres,
+        image: item.show.image ? item.show.image.medium : "placeholder.jpg"
   }));
 }
 
@@ -53,7 +53,7 @@ function renderShows(shows) {
 
     const image = document.createElement("img");
       image.src = show.image;
-      imagle.alt = `${show.name} poster`;
+      image.alt = `${show.name} poster`;
 
     const favoriteButton = document.createElement("button");
       favoriteButton.textContent = "Favorite";
