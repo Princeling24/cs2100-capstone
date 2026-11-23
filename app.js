@@ -89,6 +89,9 @@ document.getElementById("search").addEventListener("input", function() {
 });
 
 function validateForm() {
+  document.getElementById("searchError").textContent = "";
+    document.getElementById("ratingError").textContent = "";
+    
   let valid = true;
   const search = document.getElementById("search").value.trim();
   const rating = document.getElementById("rating").value;
