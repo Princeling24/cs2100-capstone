@@ -89,7 +89,6 @@ function applyFilters() {
   const selectGenre = document.getElementById("genre").value;
   const selectStatus = document.getElementById("status").value;
   const selectType = document.getElementById("type").value;
-  const selectStudio = document.getElementById("studio").value;
 
   const minRating = Number(document.getElementById("rating").value || 0);
 
@@ -108,27 +107,13 @@ function applyFilters() {
 
     let typeMatch = true;
     if (selectType === "Animated") {
-        typeMatch = show.type === "Animation";
+        typeMatch = show.genres.includes("Animation");
     }
     else if (selectType === "Live Action") {
-        typeMatch = show.type !== "Animation";
+        typeMatch = !show.genres.includes("Animation");
     }
 
-    let studioMatch = true;
-    if (selectStudio === "Marvel") {
-        studioMatch = show.name.toLowerCase().includes("marvel");
-    }
-    else if (selectStudio === "DC") {
-        studioMatch = show.name.toLowerCase().includes("dc");
-    }
-    else if (selectStudio === "Netflix") {
-        studioMatch = show.network && show.network.toLowerCase().includes("netflix");
-    }
-    else if (selectStudio === "Amazon") {
-        studioMatch = show.network && show.network.toLowerCase().includes("amazon");
-    }
-
-    return genreMatch && ratingMatch && statusMatch && typeMatch && studioMatch;
+    return genreMatch && ratingMatch && statusMatch && typeMatch;
   });
 
   renderShows(filteredShows);
@@ -154,7 +139,7 @@ function validateForm() {
     return valid;
   }
 
-  if (rating !== "" || rating < 1 || rating > 10) {
+  if (rating !== "" && (rating < 1 || rating > 10)) {
     valid = false; 
     document.getElementById("ratingError").textContent = "Rating must be between 1 and 10";
     return valid;
@@ -180,5 +165,3 @@ document.getElementById("rating").addEventListener("input", applyFilters);
 document.getElementById("status").addEventListener("change", applyFilters);
 
 document.getElementById("type").addEventListener("change", applyFilters);
-
-document.getElementById("studio").addEventListener("change", applyFilters);
