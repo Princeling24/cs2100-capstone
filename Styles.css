@@ -40,3 +40,5 @@ a:focus {outline: 3px solid #FFD700;
                 height: auto;
                 display: block;
                 margin-bottom: 10px;}
+
+.favorite {background-color: #00008B;}
